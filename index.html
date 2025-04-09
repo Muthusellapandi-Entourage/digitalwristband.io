@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -11,7 +12,7 @@
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
-  <base href="/flutter_application_6/">
+  <base href="digitalwristband.io">
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="A new Flutter project.">
@@ -21,20 +22,21 @@
   <meta name="apple-mobile-web-app-title" content="flutter_application_6">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png" />
   <title>flutter_application_6</title>
   <link rel="manifest" href="manifest.json">
   <!-- Google Maps API Script for Geolocation -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
 </head>
+
 <body>
   <script>
     // This enables geolocation on some browsers that block it in iframes
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
       if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function() {
+        navigator.geolocation.getCurrentPosition(function () {
           // Permission granted, do nothing special
-        }, function() {
+        }, function () {
           // Permission denied, could add handling here
         });
       }
@@ -42,4 +44,5 @@
   </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
+
 </html>
