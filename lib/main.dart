@@ -190,6 +190,7 @@ class _LocationColorScreenState extends State<LocationColorScreen> {
               const SizedBox(height: 20),
               Text(
                 _locationStatus,
+                textAlign: TextAlign.center,
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 20,
