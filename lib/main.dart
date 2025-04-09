@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -14,11 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Location Color App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      // title: 'Location Color App',
+      // theme: ThemeData(
+      //   primarySwatch: Colors.blue,
+      //   visualDensity: VisualDensity.adaptivePlatformDensity,
+      // ),
       home: const LocationColorScreen(),
     );
   }
@@ -46,7 +45,7 @@ class _LocationColorScreenState extends State<LocationColorScreen> {
   final double _radiusInMeters = 2500;
 
   // Colors
-  final Color _activeColor = Colors.blue;
+  final Color _activeColor = Colors.red;
   final Color _inactiveColor = Colors.grey;
 
   // Timer interval (2 minutes = 120 seconds)
@@ -135,8 +134,8 @@ class _LocationColorScreenState extends State<LocationColorScreen> {
         _isLoading = false;
         _locationStatus =
             isInLocation
-                ? "You're in the target location!"
-                : "You're not in the target location";
+                ? "You're in Al Qadsiah FC end of Season cermony"
+                : "You're not in the event location";
       });
     } catch (e) {
       setState(() {
@@ -158,6 +157,34 @@ class _LocationColorScreenState extends State<LocationColorScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Center(
+                child: SizedBox(
+                  height: 200,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Welcome",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 48, // Large size for "Welcome"
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        "to Al Qadsiah End of Season Ceremony",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 28.8, // 60% of 48 = 28.8
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
               if (_isLoading)
                 const CircularProgressIndicator(color: Colors.white),
               const SizedBox(height: 20),
@@ -172,13 +199,13 @@ class _LocationColorScreenState extends State<LocationColorScreen> {
               const SizedBox(height: 20),
               Text(
                 "Location checked every $_locationCheckIntervalSeconds seconds",
-                style: const TextStyle(color: Colors.white, fontSize: 16),
+                style: const TextStyle(color: Colors.white, fontSize: 2),
               ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: _checkUserLocation,
-                child: const Text('Check Location Now'),
-              ),
+              //const SizedBox(height: 20),
+              // ElevatedButton(
+              //   onPressed: _checkUserLocation,
+              //   child: const Text('Check Location Now'),
+              // ),
             ],
           ),
         ),
